@@ -21,6 +21,8 @@ import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+import static com.bigid.textmatcher.util.Constants.SOURCE_PATH;
+
 @SpringBootApplication
 @AllArgsConstructor
 public class TextMatcherApplication implements ApplicationRunner {
@@ -39,7 +41,7 @@ public class TextMatcherApplication implements ApplicationRunner {
 		BlockingQueue<Batch> batches = new ArrayBlockingQueue<>(Constants.CONCURRENT_MATCHERS_NUMBER);
 
 		Queue<Map<String, List<Offset>>> matches = batchHandler.handle(batches);
-		fileReader.read("https://norvig.com/big.txt", batches);
+		fileReader.read(SOURCE_PATH, batches);
 		aggregatorService.aggregate(matches);
 	}
 
