@@ -1,6 +1,6 @@
 # HOW TO RUN locally:
 
-Pull docker image: https://hub.docker.com/r/divertito/text-matcher and using `docker run`.
+Pull docker image: https://hub.docker.com/r/divertito/text-matcher and execute `docker run`.
 There several option available to setup matcher: 
 
 --matchers-amount 
